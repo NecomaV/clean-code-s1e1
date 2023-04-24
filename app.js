@@ -40,6 +40,8 @@ var createNewTaskElement=function(taskString){
     editInput.type="text";
     editInput.className="task";
 
+    checkBox.classList.toggle('check-box')
+
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
     editButton.className="edit";
 
@@ -64,6 +66,9 @@ var addTask=function(){
     //Create a new list item with the text from the #new-task:
     if (!taskInput.value) return;
     var listItem=createNewTaskElement(taskInput.value);
+    listItem.classList.toggle('task-list')
+    
+
 
     //Append listItem to incompleteTaskHolder
     incompleteTaskHolder.appendChild(listItem);
